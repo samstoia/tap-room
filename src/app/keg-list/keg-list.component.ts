@@ -13,6 +13,8 @@ export class KegListComponent implements OnInit {
   @Output() clickSellPint = new EventEmitter();
   @Output() clickSellGrowler = new EventEmitter();
 
+  // kegIsLow = null;
+
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
@@ -23,6 +25,14 @@ export class KegListComponent implements OnInit {
 
   sellGrowlerClicked(kegToSellFrom) {
     this.clickSellGrowler.emit(kegToSellFrom);
+  }
+
+  lowKeg() {
+    this.childKegList.forEach(function(i){
+      if (i.pints <= 10) {
+        alert('A keg is low!!!');
+      }
+    });
   }
 
   constructor() { }

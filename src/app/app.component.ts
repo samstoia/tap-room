@@ -32,4 +32,12 @@ export class AppComponent {
   sellGrowler(sellFromKeg) {
     sellFromKeg.pints -= 2;
   }
+
+  lowKeg() {
+    this.masterKegList.forEach(function(i){
+      if (i.pints <= 10) {
+        alert('works');
+      }
+    });
+  }
 }

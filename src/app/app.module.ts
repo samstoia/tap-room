@@ -6,6 +6,7 @@ import { KegListComponent } from './keg-list/keg-list.component';
 import { NewKegFormComponent } from './new-keg-form/new-keg-form.component';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { FormsModule } from '@angular/forms';
+import { LowKegComponent } from './low-keg/low-keg.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     KegListComponent,
     NewKegFormComponent,
-    EditKegComponent
+    EditKegComponent,
+    LowKegComponent
   ],
   imports: [
     BrowserModule,
