@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { KegListComponent } from './keg-list/keg-list.component';
 import { NewKegFormComponent } from './new-keg-form/new-keg-form.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,10 +13,12 @@ import { NewKegFormComponent } from './new-keg-form/new-keg-form.component';
     AppComponent,
     HeaderComponent,
     KegListComponent,
-    NewKegFormComponent
+    NewKegFormComponent,
+    EditKegComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
