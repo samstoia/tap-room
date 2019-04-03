@@ -1,0 +1,10 @@
+<div *ngFor="let singleKeg of childKegList">
+  <ul>
+    <li>{{singleKeg.name}}</li>
+    <li>Brewer: {{singleKeg.brand}}</li>
+    <li>${{singleKeg.price}} per pint</li>
+    <li>ABV: {{singleKeg.abv}}</li>
+    <li>{{singleKeg.pints}} pints remaining</li>
+    <li>Style of beer: {{singleKeg.style}}</li>
+  </ul>
+</div>

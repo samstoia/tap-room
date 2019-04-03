@@ -1,0 +1,16 @@
+<button (click)="showAddKegForm()">Tap a new Keg</button>
+<div *ngIf="showAddKeg">
+  <h2>New Beer/Keg</h2>
+  <label for="name">New Beer Name: </label>
+  <input #name><br>
+  <label for="brand">Brewer Name: </label>
+  <input #brand><br>
+  <label for="price">Set Price: </label>
+  <input #price type="number"><br>
+  <label for="abv">ABV: </label>
+  <input #abv><br>
+  <label for="style">Style: </label>
+  <input #style><br>
+  <button (click)="addKeg(name.value, brand.value, price.value, abv.value, style.value)">Add to keg list</button>
+  <button (click)="hideAddKegForm()">Hide</button>
+</div>
