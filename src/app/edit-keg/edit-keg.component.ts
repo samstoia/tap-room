@@ -8,10 +8,10 @@ import { Keg } from '../models/keg.model';
 })
 export class EditKegComponent implements OnInit {
   @Input() childSelectedKeg: Keg;
-  @Output() clickSender = new EventEmitter();
+  @Output() clickedDone = new EventEmitter();
 
-  hideButtonClicked(kegToHide: Keg) {
-    this.clickSender.emit(kegToHide);
+  finishedEditing() {
+    this.clickedDone.emit();
   }
 
   constructor() { }
