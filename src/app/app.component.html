@@ -1,4 +1,4 @@
   <app-header></app-header>
-  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSellPint)="sellPint($event)"></app-keg-list>
+  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSellPint)="sellPint($event)" (clickSellGrowler)="sellGrowler($event)"></app-keg-list>
   <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
   <app-new-keg-form [newKegList]="masterKegList" ></app-new-keg-form>

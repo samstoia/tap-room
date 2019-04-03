@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { Keg } from './models/keg.model';
-import { isMaster } from 'cluster';
 
 @Component({
   selector: 'app-root',
@@ -28,5 +27,9 @@ export class AppComponent {
 
   sellPint(sellFromKeg) {
     sellFromKeg.pints--;
+  }
+
+  sellGrowler(sellFromKeg) {
+    sellFromKeg.pints -= 2;
   }
 }

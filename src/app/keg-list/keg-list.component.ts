@@ -11,6 +11,7 @@ export class KegListComponent implements OnInit {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
   @Output() clickSellPint = new EventEmitter();
+  @Output() clickSellGrowler = new EventEmitter();
 
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
@@ -18,6 +19,10 @@ export class KegListComponent implements OnInit {
 
   sellPintClicked(kegToSellFrom) {
     this.clickSellPint.emit(kegToSellFrom);
+  }
+
+  sellGrowlerClicked(kegToSellFrom) {
+    this.clickSellGrowler.emit(kegToSellFrom);
   }
 
   constructor() { }
