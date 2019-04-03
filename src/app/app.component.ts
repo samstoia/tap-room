@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Keg } from './models/keg.model';
+import { isMaster } from 'cluster';
 
 @Component({
   selector: 'app-root',
@@ -23,5 +24,9 @@ export class AppComponent {
 
   finishedEditing() {
     this.selectedKeg = null;
+  }
+
+  sellPint(sellFromKeg) {
+    sellFromKeg.pints--;
   }
 }

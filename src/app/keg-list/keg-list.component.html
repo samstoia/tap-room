@@ -1,6 +1,6 @@
 <div *ngFor="let singleKeg of childKegList">
   <ul>
-    <li>{{singleKeg.name}}</li>
+    <h3>{{singleKeg.name}}</h3>
     <li>Brewer: {{singleKeg.brand}}</li>
     <li>${{singleKeg.price}} per pint</li>
     <li>ABV: {{singleKeg.abv}}</li>
@@ -8,4 +8,5 @@
     <li>Style of beer: {{singleKeg.style}}</li>
   </ul>
   <button (click)="editButtonClicked(singleKeg)" id="editButton">Edit Keg Info</button>
+  <button (click)="sellPintClicked(singleKeg)">Sell Pint</button>
 </div>
