@@ -12,8 +12,19 @@ export class KegListComponent implements OnInit {
   @Output() clickSender = new EventEmitter();
   @Output() clickSellPint = new EventEmitter();
   @Output() clickSellGrowler = new EventEmitter();
+  @Output() clickRefillKeg = new EventEmitter();
 
-  // kegIsLow = null;
+  kegIsLow = null;
+  lowKegs: Keg[] = [];
+  filterByUserSort: string = 'All';
+
+  onChange(optionFromMenu) {
+    this.filterByUserSort = optionFromMenu;
+  }
+
+  refillKegClicked(currentKeg) {
+    this.clickRefillKeg.emit(currentKeg);
+  }
 
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
@@ -27,14 +38,19 @@ export class KegListComponent implements OnInit {
     this.clickSellGrowler.emit(kegToSellFrom);
   }
 
-  lowKeg() {
-    this.childKegList.forEach(function(i){
-      if (i.pints <= 10) {
-        alert('A keg is low!!!');
-      }
-    });
+  pushLowKegToArray(currentKeg) {
+    if (currentKeg.pints < 10) {
+      this.lowKegs = [currentKeg];
+      this.kegIsLow = true;
+      console.log(this.lowKegs);
+    }
   }
 
+  hideWarning(lowKeg) {
+  if (lowKeg.pints === 124) {
+    this.kegIsLow = null;
+    }
+  }
   constructor() { }
 
   ngOnInit() {

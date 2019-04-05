@@ -6,8 +6,8 @@ import { KegListComponent } from './keg-list/keg-list.component';
 import { NewKegFormComponent } from './new-keg-form/new-keg-form.component';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { FormsModule } from '@angular/forms';
-import { LowKegComponent } from './low-keg/low-keg.component';
-
+import { EmptyKegPipe } from './emptyKeg.pipe';
+import { FilterByUserSortPipe } from './styleFilter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { LowKegComponent } from './low-keg/low-keg.component';
     KegListComponent,
     NewKegFormComponent,
     EditKegComponent,
-    LowKegComponent
+    EmptyKegPipe,
+    FilterByUserSortPipe
   ],
   imports: [
     BrowserModule,

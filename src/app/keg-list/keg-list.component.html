@@ -1,13 +1,24 @@
-<div *ngFor="let singleKeg of childKegList">
+<div *ngFor="let lowKeg of lowKegs">
+  <h3 *ngIf="kegIsLow">Alert! {{lowKeg.name}} has {{lowKeg.pints}} pints remaining!<button (click)="refillKegClicked(lowKeg)" (click)="hideWarning(lowKeg)">Tap a new keg of this beer</button><br>
+  </h3>
+</div>
+<label>Filter page by:</label>
+<select (change)="onChange($event.target.value)">
+   <option value="All" selected="selected">All Beers</option>
+   <option value="Stout">Stout</option>
+   <option value="IPA">IPA</option>
+   <option value="Lager">Lager</option>
+   <option value="Price">Price</option>
+ </select>
+ <div *ngFor="let singleKeg of childKegList | emptyKeg | filterByUserSort: filterByUserSort">
   <ul>
     <h3>{{singleKeg.name}}</h3>
     <li>Brewer: {{singleKeg.brand}}</li>
     <li>${{singleKeg.price}} per pint</li>
-    <li>ABV: {{singleKeg.abv}}</li>
-    <li>{{singleKeg.pints}} pints remaining</li>
-    <li>Style of beer: {{singleKeg.style}}</li>
+    <li>ABV: {{singleKeg.abv}}</li>    <li>{{singleKeg.pints}} pints remaining</li>      <li>Style of beer: {{singleKeg.style}}</li>
   </ul>
   <button (click)="editButtonClicked(singleKeg)" id="editButton">Edit Keg Info</button>
-  <button (click)="sellPintClicked(singleKeg)">Sell Pint</button>
-  <button (click)="sellGrowlerClicked(singleKeg)" (click)="lowKeg()">Sell Growler</button>
-</div>
+  <button (click)="sellPintClicked(singleKeg)" (click)="pushLowKegToArray(singleKeg)">Sell Pint</button>
+  <button (click)="sellGrowlerClicked(singleKeg)" (click)="pushLowKegToArray(singleKeg)">Sell Growler</button>
+  <button (click)="refillKegClicked(singleKeg)">Tap a new keg of this beer</button>
+</div>"
